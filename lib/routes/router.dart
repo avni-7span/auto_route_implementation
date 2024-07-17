@@ -3,11 +3,13 @@ import 'package:autoroute_practice/routes/router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Screen,Route')
 class AppRouter extends $AppRouter {
-  RouteType get defaultRouteType => RouteType.material();
+  @override
+  RouteType get defaultRouteType => const RouteType.material();
 
+  @override
   final List<AutoRoute> routes = [
     AutoRoute(page: HomeRoute.page, path: '/'),
-    AutoRoute(page: BookListPage.page),
-    AutoRoute(page: BookDetailsPage.page)
+    AutoRoute(page: BookListPage.page, path: '/:id'),
+    AutoRoute(page: BookDetailsPage.page, path: '/book-details')
   ];
 }

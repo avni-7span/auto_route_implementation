@@ -9,10 +9,10 @@ class BookDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Details'),
+        title: const Text('Details'),
         backgroundColor: Colors.yellow,
       ),
-      body: Center(child: Text('Coming Soon')),
+      body: const Center(child: Text('Coming Soon')),
     );
   }
 }
