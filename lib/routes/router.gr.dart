@@ -8,19 +8,20 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i4;
-import 'package:autoroute_practice/screens/book_details_page.dart' as _i1;
-import 'package:autoroute_practice/screens/book_list_page.dart' as _i2;
-import 'package:autoroute_practice/screens/home_screen.dart' as _i3;
-import 'package:flutter/material.dart' as _i5;
+import 'package:auto_route/auto_route.dart' as _i5;
+import 'package:autoroute_practice/routes/router.dart' as _i3;
+import 'package:autoroute_practice/screens/book_details_screen.dart' as _i1;
+import 'package:autoroute_practice/screens/book_list_screen.dart' as _i2;
+import 'package:autoroute_practice/screens/home_screen.dart' as _i4;
+import 'package:flutter/material.dart' as _i6;
 
-abstract class $AppRouter extends _i4.RootStackRouter {
+abstract class $AppRouter extends _i5.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i4.PageFactory> pagesMap = {
+  final Map<String, _i5.PageFactory> pagesMap = {
     BookDetailsPage.name: (routeData) {
-      return _i4.AutoRoutePage<dynamic>(
+      return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i1.BookDetailsPage(),
       );
@@ -36,7 +37,7 @@ abstract class $AppRouter extends _i4.RootStackRouter {
                   false,
                 ),
               ));
-      return _i4.AutoRoutePage<dynamic>(
+      return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i2.BookListPage(
           key: args.key,
@@ -45,10 +46,22 @@ abstract class $AppRouter extends _i4.RootStackRouter {
         ),
       );
     },
-    HomeRoute.name: (routeData) {
-      return _i4.AutoRoutePage<dynamic>(
+    DetailsShellRoute.name: (routeData) {
+      return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i3.HomeScreen(),
+        child: const _i3.DetailsShellScreen(),
+      );
+    },
+    HomeRoute.name: (routeData) {
+      return _i5.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i4.HomeScreen(),
+      );
+    },
+    HomeShellRoute.name: (routeData) {
+      return _i5.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i3.HomeShellScreen(),
       );
     },
   };
@@ -56,8 +69,8 @@ abstract class $AppRouter extends _i4.RootStackRouter {
 
 /// generated route for
 /// [_i1.BookDetailsPage]
-class BookDetailsPage extends _i4.PageRouteInfo<void> {
-  const BookDetailsPage({List<_i4.PageRouteInfo>? children})
+class BookDetailsPage extends _i5.PageRouteInfo<void> {
+  const BookDetailsPage({List<_i5.PageRouteInfo>? children})
       : super(
           BookDetailsPage.name,
           initialChildren: children,
@@ -65,17 +78,17 @@ class BookDetailsPage extends _i4.PageRouteInfo<void> {
 
   static const String name = 'BookDetailsPage';
 
-  static const _i4.PageInfo<void> page = _i4.PageInfo<void>(name);
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i2.BookListPage]
-class BookListPage extends _i4.PageRouteInfo<BookListPageArgs> {
+class BookListPage extends _i5.PageRouteInfo<BookListPageArgs> {
   BookListPage({
-    _i5.Key? key,
+    _i6.Key? key,
     required int id,
     bool isNameShow = false,
-    List<_i4.PageRouteInfo>? children,
+    List<_i5.PageRouteInfo>? children,
   }) : super(
           BookListPage.name,
           args: BookListPageArgs(
@@ -90,8 +103,8 @@ class BookListPage extends _i4.PageRouteInfo<BookListPageArgs> {
 
   static const String name = 'BookListPage';
 
-  static const _i4.PageInfo<BookListPageArgs> page =
-      _i4.PageInfo<BookListPageArgs>(name);
+  static const _i5.PageInfo<BookListPageArgs> page =
+      _i5.PageInfo<BookListPageArgs>(name);
 }
 
 class BookListPageArgs {
@@ -101,7 +114,7 @@ class BookListPageArgs {
     this.isNameShow = false,
   });
 
-  final _i5.Key? key;
+  final _i6.Key? key;
 
   final int id;
 
@@ -114,9 +127,23 @@ class BookListPageArgs {
 }
 
 /// generated route for
-/// [_i3.HomeScreen]
-class HomeRoute extends _i4.PageRouteInfo<void> {
-  const HomeRoute({List<_i4.PageRouteInfo>? children})
+/// [_i3.DetailsShellScreen]
+class DetailsShellRoute extends _i5.PageRouteInfo<void> {
+  const DetailsShellRoute({List<_i5.PageRouteInfo>? children})
+      : super(
+          DetailsShellRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DetailsShellRoute';
+
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i4.HomeScreen]
+class HomeRoute extends _i5.PageRouteInfo<void> {
+  const HomeRoute({List<_i5.PageRouteInfo>? children})
       : super(
           HomeRoute.name,
           initialChildren: children,
@@ -124,5 +151,19 @@ class HomeRoute extends _i4.PageRouteInfo<void> {
 
   static const String name = 'HomeRoute';
 
-  static const _i4.PageInfo<void> page = _i4.PageInfo<void>(name);
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i3.HomeShellScreen]
+class HomeShellRoute extends _i5.PageRouteInfo<void> {
+  const HomeShellRoute({List<_i5.PageRouteInfo>? children})
+      : super(
+          HomeShellRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeShellRoute';
+
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
 }
