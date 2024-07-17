@@ -10,6 +10,11 @@ class AppRouter extends $AppRouter {
   final List<AutoRoute> routes = [
     AutoRoute(page: HomeRoute.page, path: '/'),
     AutoRoute(page: BookListPage.page, path: '/:id'),
-    AutoRoute(page: BookDetailsPage.page, path: '/book-details')
+    AutoRoute(page: BookDetailsPage.page, path: '/book-details'),
+    RedirectRoute(path: '/home/*', redirectTo: '/'),
+    CustomRoute(
+        path: '/',
+        page: BookListPage.page,
+        transitionsBuilder: TransitionsBuilders.zoomIn)
   ];
 }
